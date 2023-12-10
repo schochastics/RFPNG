@@ -32,7 +32,7 @@ use `png::readPNG`
 img <- png::readPNG("bear.png")
 ```
 
-![](bear.png)
+<img src="bear.png" width="512">
 
 Before writing with FPNG, the array needs to be reshaped, which includes
 converting from \[0,1\] values to \[0,255\].
@@ -49,9 +49,11 @@ bench::mark(
     png::writePNG(img),
     check = FALSE
 )
+#> Warning: Some expressions had a GC in every iteration; so filtering is
+#> disabled.
 #> # A tibble: 2 × 6
 #>   expression                 min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>            <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 writeFPNG(fimg, ftmp)   31.8ms   32.6ms     30.4       16MB     13.5
-#> 2 png::writePNG(img)     512.3ms  512.3ms      1.95     7.5MB      0
+#> 1 writeFPNG(fimg, ftmp)     32ms   32.9ms     23.9       16MB     5.96
+#> 2 png::writePNG(img)       525ms  524.8ms      1.91     7.5MB     1.91
 ```

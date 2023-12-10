@@ -41,7 +41,7 @@ For regular pngs, use `png::readPNG`
 img <- png::readPNG("bear.png")
 ```
 
-![](bear.png)
+<img src="bear.png" width="512">
 
 Before writing with FPNG, the array needs to be reshaped, which includes converting
 from [0,1] values to [0,255].

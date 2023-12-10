@@ -2,12 +2,14 @@
 % Please edit documentation in R/RcppExports.R
 \name{writeFPNG}
 \alias{writeFPNG}
-\title{Encode to file}
+\title{Encode to file
+Create a FPNG image from an array or matrix.}
 \usage{
 writeFPNG(x, file_path)
 }
 \arguments{
-\item{x}{integer matrix}
+\item{x}{image represented by an integer matrix with values between 0 and
+255. Either three (RGB) or four (RGB+alpha) planes.}
 
 \item{file_path}{character. file to write to}
 }
@@ -16,4 +18,5 @@ bool
 }
 \description{
 Encode to file
+Create a FPNG image from an array or matrix.
 }

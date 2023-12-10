@@ -48,14 +48,14 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// decode_from_file
-IntegerVector decode_from_file(const char* file_path);
-RcppExport SEXP _RFPNG_decode_from_file(SEXP file_pathSEXP) {
+// readFPNG
+IntegerVector readFPNG(const char* file_path);
+RcppExport SEXP _RFPNG_readFPNG(SEXP file_pathSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const char* >::type file_path(file_pathSEXP);
-    rcpp_result_gen = Rcpp::wrap(decode_from_file(file_path));
+    rcpp_result_gen = Rcpp::wrap(readFPNG(file_path));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -64,7 +64,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RFPNG_touint8", (DL_FUNC) &_RFPNG_touint8, 2},
     {"_RFPNG_fromuint8", (DL_FUNC) &_RFPNG_fromuint8, 4},
     {"_RFPNG_writeFPNG", (DL_FUNC) &_RFPNG_writeFPNG, 2},
-    {"_RFPNG_decode_from_file", (DL_FUNC) &_RFPNG_decode_from_file, 1},
+    {"_RFPNG_readFPNG", (DL_FUNC) &_RFPNG_readFPNG, 1},
     {NULL, NULL, 0}
 };
 

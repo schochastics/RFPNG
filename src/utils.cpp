@@ -42,7 +42,9 @@ IntegerVector fromuint8(std::vector<uint8_t> arr, int x, int y, int z) {
 }
 
 //' Encode to file
-//' @param x integer matrix
+//' Create a FPNG image from an array or matrix.
+//' @param x image represented by an integer matrix with values between 0 and
+//' 255. Either three (RGB) or four (RGB+alpha) planes.
 //' @param file_path character. file to write to
 //' @return bool
 // [[Rcpp::export(writeFPNG)]]
@@ -59,8 +61,12 @@ bool writeFPNG(IntegerVector& x, const char* file_path) {
   return true;
 }
 
-// [[Rcpp::export]]
-IntegerVector decode_from_file(const char* file_path) {
+//' Decode from file
+//' Reads an image from a PNG file into a raster array.
+//' @param file_path character. file to write to
+//' @return array representing the FPNG image
+// [[Rcpp::export(readFPNG)]]
+IntegerVector readFPNG(const char* file_path) {
   std::vector<uint8_t> out;
   uint32_t width, height, channels;
   unsigned int desired_channels = 3;

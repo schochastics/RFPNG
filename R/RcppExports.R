@@ -10,14 +10,20 @@ fromuint8 <- function(arr, x, y, z) {
 }
 
 #' Encode to file
-#' @param x integer matrix
+#' Create a FPNG image from an array or matrix.
+#' @param x image represented by an integer matrix with values between 0 and
+#' 255. Either three (RGB) or four (RGB+alpha) planes.
 #' @param file_path character. file to write to
 #' @return bool
 writeFPNG <- function(x, file_path) {
     .Call(`_RFPNG_writeFPNG`, x, file_path)
 }
 
-decode_from_file <- function(file_path) {
-    .Call(`_RFPNG_decode_from_file`, file_path)
+#' Decode from file
+#' Reads an image from a PNG file into a raster array.
+#' @param file_path character. file to write to
+#' @return array representing the FPNG image
+readFPNG <- function(file_path) {
+    .Call(`_RFPNG_readFPNG`, file_path)
 }
 

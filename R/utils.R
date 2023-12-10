@@ -18,3 +18,17 @@ reshape_to_fpng <- function(x) {
 fpng_init <- function() {
     init_fpng()
 }
+
+#' convert png to be compatible with fpng
+#' @param png_path path to png file to be converted
+#' @param fpng_path path to output png file
+#' @export
+png2fpng <- function(png_path, fpng_path) {
+    if (!requireNamespace("png", quietly = TRUE)) {
+        stop("png is needed for this function to work. Please install it.", call. = FALSE)
+    }
+    img <- png::readPNG(png_path)
+    fimg <- reshape_to_fpng(img)
+    writeFPNG(fimg, fpng_path)
+    invisible(NULL)
+}

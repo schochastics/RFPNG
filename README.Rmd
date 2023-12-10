@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 RFPNG wraps [fpng](https://github.com/richgel999/fpng), a very fast C++ .PNG image reader/writer for 24/32bpp images
-
+See the [blog post](http://richg42.blogspot.com/2023/12/announcing-cpng-compatible-network.html) by the creator Rich Geldreich for more technical details.
 ## Installation
 
 You can install the development version of RFPNG from [GitHub](https://github.com/) with:

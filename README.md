@@ -7,9 +7,10 @@
 <!-- badges: end -->
 
 RFPNG wraps [fpng](https://github.com/richgel999/fpng), a very fast C++
-.PNG image reader/writer for 24/32bpp images
-
-## Installation
+.PNG image reader/writer for 24/32bpp images See the [blog
+post](http://richg42.blogspot.com/2023/12/announcing-cpng-compatible-network.html)
+by the creator Rich Geldreich for more technical details. \##
+Installation
 
 You can install the development version of RFPNG from
 [GitHub](https://github.com/) with:
@@ -56,8 +57,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression                   min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>              <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 writeFPNG(fimg, ftmp)     31.4ms   34.2ms     28.9       16MB     9.62
-#> 2 png::writePNG(img, tmp)  575.6ms  575.6ms      1.74    4.02MB     0
+#> 1 writeFPNG(fimg, ftmp)     31.5ms   34.8ms     28.6       16MB     10.7
+#> 2 png::writePNG(img, tmp)    534ms    534ms      1.87    4.02MB      0
 ```
 
 same goes for the reading

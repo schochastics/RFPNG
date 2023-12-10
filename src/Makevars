@@ -1,0 +1,1 @@
+PKG_CPPFLAGS = -msse4.1 -mpclmul -fno-strict-aliasing

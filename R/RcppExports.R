@@ -15,6 +15,7 @@ fromuint8 <- function(arr, x, y, z) {
 #' 255. Either three (RGB) or four (RGB+alpha) planes.
 #' @param file_path character. file to write to
 #' @return bool
+#' @export
 writeFPNG <- function(x, file_path) {
     .Call(`_RFPNG_writeFPNG`, x, file_path)
 }
@@ -23,6 +24,7 @@ writeFPNG <- function(x, file_path) {
 #' Reads an image from a PNG file into a raster array.
 #' @param file_path character. file to write to
 #' @return array representing the FPNG image
+#' @export
 readFPNG <- function(file_path) {
     .Call(`_RFPNG_readFPNG`, file_path)
 }

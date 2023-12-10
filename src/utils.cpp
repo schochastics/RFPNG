@@ -47,6 +47,7 @@ IntegerVector fromuint8(std::vector<uint8_t> arr, int x, int y, int z) {
 //' 255. Either three (RGB) or four (RGB+alpha) planes.
 //' @param file_path character. file to write to
 //' @return bool
+//' @export
 // [[Rcpp::export(writeFPNG)]]
 bool writeFPNG(IntegerVector& x, const char* file_path) {
   fpng::fpng_init();
@@ -65,6 +66,7 @@ bool writeFPNG(IntegerVector& x, const char* file_path) {
 //' Reads an image from a PNG file into a raster array.
 //' @param file_path character. file to write to
 //' @return array representing the FPNG image
+//' @export
 // [[Rcpp::export(readFPNG)]]
 IntegerVector readFPNG(const char* file_path) {
   std::vector<uint8_t> out;

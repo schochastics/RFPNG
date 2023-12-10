@@ -71,10 +71,10 @@ bench::mark(
     check = FALSE
 )
 # A tibble: 3 × 13
-  expression     min  median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time result memory    
-  <bch:expr>  <bch:> <bch:t>     <dbl> <bch:byt>    <dbl> <int> <dbl>   <bch:tm> <list> <list>    
-1 "readFPNG(… 29.8ms  33.6ms      29.7      16MB     13.2     9     4    303.1ms <NULL> <Rprofmem>
-2 "png::read… 75.7ms 100.9ms      10.7      36MB     10.7     3     3    279.5ms <NULL> <Rprofmem>
-3 "png::read… 97.3ms  97.3ms      10.3      36MB     41.1     1     4     97.3ms <NULL> <Rprofmem>
-# ℹ 2 more variables: time <list>, gc <list>
+#>   expression     min  median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time result memory
+#>   <bch:expr>  <bch:> <bch:t>     <dbl> <bch:byt>    <dbl> <int> <dbl>   <bch:tm> <list> <list>
+#> 1 "readFPNG(… 29.8ms  33.6ms      29.7      16MB     13.2     9     4    303.1ms <NULL> <Rprofmem>
+#> 2 "png::read… 75.7ms 100.9ms      10.7      36MB     10.7     3     3    279.5ms <NULL> <Rprofmem>
+#> 3 "png::read… 97.3ms  97.3ms      10.3      36MB     41.1     1     4     97.3ms <NULL> <Rprofmem>
+#> # ℹ 2 more variables: time <list>, gc <list>
 ```

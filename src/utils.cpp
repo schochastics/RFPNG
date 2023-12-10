@@ -80,6 +80,8 @@ IntegerVector readFPNG(const char* file_path) {
     IntegerVector img = fromuint8(out, width, height, channels);
     return img;
   } else {
-    stop("error reading file.");
+    stop(
+        "error reading file. Most likely, the png was not encoded with RFPNG. "
+        "use png::readPNG instead. ");
   }
 }

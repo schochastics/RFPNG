@@ -17,7 +17,7 @@ fromuint8 <- function(arr, x, y, z) {
 #' @return bool
 #' @export
 writeFPNG <- function(x, file_path) {
-    .Call(`_RFPNG_writeFPNG`, x, file_path)
+    invisible(.Call(`_RFPNG_writeFPNG`, x, file_path))
 }
 
 #' Decode from file

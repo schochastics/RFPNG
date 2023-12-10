@@ -37,15 +37,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // writeFPNG
-bool writeFPNG(IntegerVector& x, const char* file_path);
+void writeFPNG(IntegerVector& x, const char* file_path);
 RcppExport SEXP _RFPNG_writeFPNG(SEXP xSEXP, SEXP file_pathSEXP) {
 BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< IntegerVector& >::type x(xSEXP);
     Rcpp::traits::input_parameter< const char* >::type file_path(file_pathSEXP);
-    rcpp_result_gen = Rcpp::wrap(writeFPNG(x, file_path));
-    return rcpp_result_gen;
+    writeFPNG(x, file_path);
+    return R_NilValue;
 END_RCPP
 }
 // readFPNG

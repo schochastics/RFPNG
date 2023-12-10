@@ -49,7 +49,7 @@ IntegerVector fromuint8(std::vector<uint8_t> arr, int x, int y, int z) {
 //' @return bool
 //' @export
 // [[Rcpp::export(writeFPNG)]]
-bool writeFPNG(IntegerVector& x, const char* file_path) {
+void writeFPNG(IntegerVector& x, const char* file_path) {
   fpng::fpng_init();
   Rcpp::Dimension d = x.attr("dim");
   int w = d[0];
@@ -59,7 +59,6 @@ bool writeFPNG(IntegerVector& x, const char* file_path) {
   //   const void* ptr = static_cast<const void*>(y.begin());
   fpng::fpng_encode_image_to_file(file_path, static_cast<const void*>(y.data()),
                                   w, h, chan, 0);
-  return true;
 }
 
 //' Decode from file
@@ -74,6 +73,10 @@ IntegerVector readFPNG(const char* file_path) {
   unsigned int desired_channels = 3;
   int ret = fpng::fpng_decode_file(file_path, out, width, height, channels,
                                    desired_channels);
-  IntegerVector img = fromuint8(out, width, height, channels);
-  return img;
+  if (ret == 0) {
+    IntegerVector img = fromuint8(out, width, height, channels);
+    return img;
+  } else {
+    stop("error reading file.");
+  }
 }

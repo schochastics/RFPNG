@@ -9,8 +9,12 @@ fromuint8 <- function(arr, x, y, z) {
     .Call(`_RFPNG_fromuint8`, arr, x, y, z)
 }
 
-encode_to_file <- function(x) {
-    .Call(`_RFPNG_encode_to_file`, x)
+#' Encode to file
+#' @param x integer matrix
+#' @param file_path character. file to write to
+#' @return bool
+writeFPNG <- function(x, file_path) {
+    .Call(`_RFPNG_writeFPNG`, x, file_path)
 }
 
 decode_from_file <- function(file_path) {

@@ -41,8 +41,12 @@ IntegerVector fromuint8(std::vector<uint8_t> arr, int x, int y, int z) {
   return result;
 }
 
-// [[Rcpp::export]]
-bool encode_to_file(IntegerVector& x) {
+//' Encode to file
+//' @param x integer matrix
+//' @param file_path character. file to write to
+//' @return bool
+// [[Rcpp::export(writeFPNG)]]
+bool writeFPNG(IntegerVector& x, const char* file_path) {
   fpng::fpng_init();
   Rcpp::Dimension d = x.attr("dim");
   int w = d[0];
@@ -50,8 +54,8 @@ bool encode_to_file(IntegerVector& x) {
   int chan = d[2];
   std::vector<uint8_t> y = touint8(x, d);
   //   const void* ptr = static_cast<const void*>(y.begin());
-  fpng::fpng_encode_image_to_file(
-      "test.png", static_cast<const void*>(y.data()), w, h, chan, 0);
+  fpng::fpng_encode_image_to_file(file_path, static_cast<const void*>(y.data()),
+                                  w, h, chan, 0);
   return true;
 }
 

@@ -27,7 +27,8 @@ library(RFPNG)
 ```
 
 RFPNG can only read pngs that were encoded with RFPNG. For regular pngs,
-use `png::readPNG`
+use `png::readPNG`. The function `png2fpng` can be used to convertinga
+regular png to be compatible with fpng.
 
 ``` r
 img <- png::readPNG("bear.png")
@@ -57,8 +58,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression                   min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>              <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 writeFPNG(fimg, ftmp)     31.5ms   34.8ms     28.6       16MB     10.7
-#> 2 png::writePNG(img, tmp)    534ms    534ms      1.87    4.02MB      0
+#> 1 writeFPNG(fimg, ftmp)     30.7ms   33.5ms     29.7       16MB     9.90
+#> 2 png::writePNG(img, tmp)  545.3ms  545.3ms      1.83    4.02MB     0
 ```
 
 same goes for the reading

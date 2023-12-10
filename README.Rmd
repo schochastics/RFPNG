@@ -36,7 +36,8 @@ library(RFPNG)
 ```
 
 RFPNG can only read pngs that were encoded with RFPNG. 
-For regular pngs, use `png::readPNG`
+For regular pngs, use `png::readPNG`. The function `png2fpng` can be used to convertinga regular png 
+to be compatible with fpng.
 ```{r example}
 img <- png::readPNG("bear.png")
 ```

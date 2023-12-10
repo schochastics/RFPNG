@@ -10,6 +10,15 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// init_fpng
+void init_fpng();
+RcppExport SEXP _RFPNG_init_fpng() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    init_fpng();
+    return R_NilValue;
+END_RCPP
+}
 // touint8
 std::vector<uint8_t> touint8(IntegerVector arr, Rcpp::Dimension dim);
 RcppExport SEXP _RFPNG_touint8(SEXP arrSEXP, SEXP dimSEXP) {
@@ -60,6 +69,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_RFPNG_init_fpng", (DL_FUNC) &_RFPNG_init_fpng, 0},
     {"_RFPNG_touint8", (DL_FUNC) &_RFPNG_touint8, 2},
     {"_RFPNG_fromuint8", (DL_FUNC) &_RFPNG_fromuint8, 4},
     {"_RFPNG_writeFPNG", (DL_FUNC) &_RFPNG_writeFPNG, 2},

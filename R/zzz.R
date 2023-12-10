@@ -1,3 +1,3 @@
 .onLoad <- function(libname, pkgname) {
-    # init()
+    fpng_init()
 }

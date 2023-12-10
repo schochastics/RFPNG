@@ -3,6 +3,9 @@ using namespace Rcpp;
 #include "fpng.h"
 
 // [[Rcpp::export]]
+void init_fpng() { fpng::fpng_init(); }
+
+// [[Rcpp::export]]
 std::vector<uint8_t> touint8(IntegerVector arr, Rcpp::Dimension dim) {
   // Ensure the input is a 3D array
   if (dim.size() != 3) {

@@ -11,3 +11,10 @@ reshape_to_fpng <- function(x) {
     x <- array(c(x), c(d[1], d[2], d[3]))
     return(x)
 }
+
+#' Initialize fpng
+#' run one time on startup
+#' @export
+fpng_init <- function() {
+    init_fpng()
+}
